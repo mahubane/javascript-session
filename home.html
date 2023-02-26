@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title> home</title>
+        
+        <link rel="stylesheet" href="./style.css " />
+        
+    </header>
+    <body>
+         
+<h1>  this is home</h1>
+<div class="container"> 
+
+<!--<p id="listItem"></p>-->
+<form onsubmit="sendEmail();reset();return false ;"> 
+    <h3> get in touch</h3>
+    <input type="text" id ="name" placeholder="your name" required>
+    <input type="email" id ="email" placeholder="email id" required>
+    <input type="text" id ="phone" placeholder="phone no" required>
+    <textarea od="message" rows="4" placeholder ="how can we help you"></textarea>
+    <button type="submit">send </button>
+</form>
+
+</div >
+<script src=" https://smtpjs.com/v3/smtp.js">  </script>
+<script>
+ function sendEmail(){
+    Email.send({
+    Host : "smtp.gmail.com",
+    Username : " mahubanemk@gmail.com",
+    Password : "Giftt@91",
+    To : 'mahubanemk@gmail.com',
+    From : document.getElementById("email").value ,
+    Subject : "new form contact querry",
+
+   Body : "name:"+document.getElementById("name").value 
+    +" <br> surname:"+document.getElementById("surname").value 
+ +" <br>  email:"+document.getElementById("email").value 
+    +" <br> message:"+document.getElementById("message").value 
+    
+    
+}).then( 
+  message => alert(message )
+);
+
+    
+ }  
+</script>
+</body>
+    <footer>
+
+    </footer>
+</html>
